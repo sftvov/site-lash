@@ -1,0 +1,229 @@
+body {
+	color: $TextDark;
+	@include common-value('font-size', 20);
+	font-weight: 500;
+	line-height: 1.2;
+	letter-spacing: 0em;
+	font-style: normal;
+	// &::-webkit-scrollbar {
+	// 	width: 0;
+	// }
+}
+
+// a {
+// 	@media (hover: hover) {
+// 		&:hover {
+// 			color: $bright;
+// 			// &._underline::before {
+// 			// 	background-color: $bright;
+// 			// }
+// 		}
+// 	}
+// 	transition: color 0.3s ease-out;
+// }
+
+b {
+	font-weight: 700;
+}
+
+._title {
+	font-size: 36/20 + em;
+	font-weight: 700;
+	line-height: 45/36;
+	text-transform: uppercase;
+	position: relative;
+	@include common-value('margin-top', 15);
+	@include common-value('margin-bottom', 30);
+	&::before {
+		content: '';
+		position: absolute;
+		@include common-value('top', 21);
+		right: calc(100% + 15px);
+		@include common-value('width', 100);
+		height: 3px;
+		background-color: $bright;
+	}
+}
+
+._button {
+	transition: all 0.15s ease;
+	font-size: 22/20 + em;
+	cursor: pointer;
+	// display: flex;
+	// align-items: center;
+	// column-gap: 4px;
+	@include common-value('padding-top', 12);
+	@include common-value('padding-bottom', 12);
+	@include common-value('padding-left', 24);
+	@include common-value('padding-right', 24);
+	border-radius: 10px;
+	color: #ffffff;
+	background-color: $TextDark;
+	&:hover {
+		box-shadow: -2px 2px 0 #000000;
+		transform: translateX(1px) translateY(-1px);
+	}
+	&:active {
+		box-shadow: 0 0 0 #000000;
+		transform: translateX(0) translateY(0);
+	}
+	&--bright {
+		color: #ffffff;
+		background-color: $main;
+		&:hover {
+			color: #ffffff;
+			background-color: $bright;
+		}
+	}
+	// &--white {
+	// 	color: $colorTextDark;
+	// 	background-color: #ffffff;
+	// 	border: 1px solid $borderGray;
+	// 	box-shadow: 0 0 2px #{$black + '15'};
+	// 	&::before {
+	// 		color: $colorTextGray;
+	// 	}
+	// }
+}
+
+// ._underline {
+// 	position: relative;
+// 	&::before {
+// 		content: '';
+// 		pointer-events: none;
+// 		position: absolute;
+// 		bottom: -2px;
+// 		width: calc(100% + 4px);
+// 		height: 1px;
+// 		background-color: $TextDark;
+// 		transition: all 0.3s ease-out;
+// 	}
+// }
+
+// ._cross {
+// 	cursor: pointer;
+// 	padding: 20px;
+// 	&::after,
+// 	&::before {
+// 		position: absolute;
+// 		top: 19px;
+// 		right: 10px;
+// 		content: '';
+// 		width: 20px;
+// 		height: 2px;
+// 	}
+// 	&::after {
+// 		transform: rotate(45deg);
+// 	}
+// 	&::before {
+// 		transform: rotate(-45deg);
+// 	}
+// }
+
+// ._arrow {
+// 	position: relative;
+// 	padding-left: 20px;
+// 	&::after,
+// 	&::before {
+// 		content: '';
+// 		position: absolute;
+// 		width: 10px;
+// 		height: 2px;
+// 		background-color: $colorText;
+// 		border-radius: 25%;
+// 		transition: all 0.5s ease;
+// 	}
+// 	&::after {
+// 		top: calc(50% + 1px);
+// 		transform: rotate(50deg);
+// 		right: -4px;
+// 	}
+// 	&::before {
+// 		top: calc(50% + 1px);
+// 		transform: rotate(130deg);
+// 	}
+// 	&._active {
+// 		&::after {
+// 			transform: rotate(130deg);
+// 		}
+
+// 		&::before {
+// 			transform: rotate(40deg);
+// 			bottom: calc(50% + 2px);
+// 			right: 12px;
+// 		}
+// 	}
+// }
+
+// .custom__checkbox {
+// 	position: relative;
+// 	margin-right: 10px;
+// 	&--tick {
+// 		min-width: 24px;
+// 		height: 24px;
+// 		border: 1px solid $TextDark;
+// 		&::before {
+// 			top: 12px;
+// 			left: 3px;
+// 			width: 8px;
+// 			transform: rotate(45deg);
+// 		}
+// 		&::after {
+// 			top: 10px;
+// 			left: 7px;
+// 			width: 14px;
+// 			transform: rotate(-45deg);
+// 		}
+// 		&::before,
+// 		&::after {
+// 			content: '';
+// 			position: absolute;
+// 			height: 2px;
+// 			background-color: $main;
+// 			opacity: 0;
+// 			visibility: hidden;
+// 			transition-property: opacity visability;
+// 			transition-duration: 0.5s;
+// 			transition-timing-function: ease;
+// 		}
+// 	}
+// }
+
+// input._error + ._label .custom__checkbox {
+// 	border-color: $bright;
+// }
+
+// input:checked + ._label .custom__checkbox {
+// 	&::before,
+// 	&::after {
+// 		opacity: 1;
+// 		visibility: visible;
+// 	}
+// }
+
+// .swiper .swiper-pagination-bullet {
+// 	transition: background-color 0.4s linear;
+// 	@media (min-width: $md1+px) {
+// 		width: 20px;
+// 		height: 20px;
+// 		margin-right: 30px;
+// 	}
+// 	@media (min-width: $md2+px) {
+// 		width: 14px;
+// 		height: 14px;
+// 		margin-right: 20px;
+// 		background-color: $colorLight;
+// 	}
+// 	width: 10px;
+// 	height: 10px;
+// 	margin-right: 13px;
+
+// 	&-active {
+// 		@media (min-width: $md2+px) {
+// 			background-color: $colorText;
+// 		}
+// 	}
+// 	&:last-child {
+// 		margin-right: 0;
+// 	}
+// }

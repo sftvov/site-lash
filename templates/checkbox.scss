@@ -1,0 +1,45 @@
+.custom__checkbox {
+	position: relative;
+	margin-right: 10px;
+	&--tick {
+		min-width: 24px;
+		height: 24px;
+		border: 1px solid $colorText;
+		&::before {
+			top: 12px;
+			left: 3px;
+			width: 8px;
+			transform: rotate(45deg);
+		}
+		&::after {
+			top: 10px;
+			left: 7px;
+			width: 14px;
+			transform: rotate(-45deg);
+		}
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			height: 2px;
+			background-color: $colorMain;
+			opacity: 0;
+			visibility: hidden;
+			transition-property: opacity visability;
+			transition-duration: 0.5s;
+			transition-timing-function: ease;
+		}
+	}
+}
+
+input._error + ._label .custom__checkbox {
+	border-color: $colorAlert;
+}
+
+input:checked + ._label .custom__checkbox {
+	&::before,
+	&::after {
+		opacity: 1;
+		visibility: visible;
+	}
+}

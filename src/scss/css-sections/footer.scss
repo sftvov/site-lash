@@ -1,0 +1,64 @@
+.footer {
+	color: #ffffff;
+	width: 100%;
+	background-color: $main;
+	&__container {
+	}
+
+	&__grid {
+		display: grid;
+		grid-template: repeat(2, auto) / auto 1fr auto;
+		align-items: center;
+		justify-items: flex-end;
+		@include common-value('column-gap', 25);
+		@include common-value('row-gap', 25);
+		@include common-value('padding-top', 25);
+		@include common-value('padding-bottom', 25);
+	}
+
+	&__logo {
+		@include common-value('width', 100);
+		grid-row: span 2;
+		& img {
+			width: 100%;
+		}
+	}
+
+	&__phone {
+		transition: transform 0.3s ease-out;
+		@media (hover: hover) {
+			&:hover {
+				transform: translateY(-2px);
+			}
+		}
+		display: flex;
+		align-items: center;
+		@include common-value('column-gap', 10);
+		@media (max-width: $md4+px) {
+			grid-column: span 2;
+		}
+	}
+
+	&__mail {
+		transition: transform 0.3s ease-out;
+		@media (hover: hover) {
+			&:hover {
+				transform: translateY(-2px);
+			}
+		}
+		display: flex;
+		align-items: center;
+		@include common-value('column-gap', 10);
+		@media (max-width: $md4+px) {
+			grid-column: span 2;
+		}
+	}
+
+	&__address {
+		text-align: right;
+		grid-column: span 2;
+		@media (max-width: $md4+px) {
+			grid-column: span 3;
+		}
+	}
+}

@@ -1,0 +1,48 @@
+$TextDark: #333333;
+$TextGray: #4f4f4f;
+$TextLight: #828282;
+
+$lightShadow: #ebebeb;
+
+$lightMask: #00000050;
+$darkMask: #000000bb;
+
+$main: #17689f;
+$bright: #17689f;
+
+$swiper-theme-color: $main;
+$swiper-inactive-color: $darkMask;
+$swiper-preloader-color: $swiper-theme-color;
+$swiper-navigation-color: $swiper-theme-color;
+$swiper-navigation-inactive-color: $swiper-inactive-color;
+$swiper-navigation-size: 50px;
+$swiper-pagination-color: $swiper-theme-color;
+$swiper-pagination-bullet-inactive-color: $swiper-inactive-color;
+$swiper-pagination-bullet-size: 10px;
+$swiper-pagination-bullet-bottom: 5px;
+$swiper-pagination-bullet-width: $swiper-pagination-bullet-size;
+$swiper-pagination-bullet-height: $swiper-pagination-bullet-size;
+$swiper-pagination-bullet-inactive-opacity: 1;
+$swiper-pagination-bullet-opacity: 1;
+$swiper-pagination-bullet-horizontal-gap: 5px;
+$swiper-pagination-bullet-vertical-gap: 6px;
+
+$fontFamily: 'Gilroy';
+$minWidth: 280;
+$maxWidth: 1920;
+
+$maxWidthContainer: 1260;
+
+// $laptopContainer: 1200;
+// $padContainer: 800;
+// $mobileContainer: $minWidth - 20;
+
+// $md1: $maxWidthContainer + 39.95;
+// $md2: $laptopContainer + 39.95;
+// $md3: $padContainer + 39.95;
+// $md4: 539.95;
+
+$md1: 1439.95;
+$md2: 1023.95;
+$md3: 767.95;
+$md4: 539.95;

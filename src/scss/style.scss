@@ -1,0 +1,36 @@
+@import 'scss-tools';
+@import '../fonts/icons/fonts';
+@import '../fonts/Gilroy/fonts';
+@import 'null';
+
+.wrapper {
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+	max-width: $maxWidth + px;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	&._loaded {
+	}
+}
+
+.page {
+	min-width: 0;
+	min-height: 0;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	flex: 1 1 auto;
+}
+
+@import 'css-settings/icons';
+@import 'css-settings/customize';
+@import 'css-settings/functions';
+
+@import 'css-sections/header';
+@import 'css-sections/footer';

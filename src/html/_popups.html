@@ -1,0 +1,41 @@
+<article class="popup popup-call">
+	<div class="popup__container _container">
+		<div class="popup__body">
+			<h3 class="popup__title">Ответим на Ваши вопросы</h3>
+			<p class="popup__description">Ответим на все возникшие вопросы и рассчитаем стоимость. Заполните форму ниже и мы сами перезвоним в течении 10 минут, звонок бесплатный, и совершенно ни к чему Вас не обязывает.</p>
+			<form id="formPopupCall" class="form" action="#">
+				<input class="form__input _req" id="formPopupCallName" name="formPopupName" type="text" placeholder="Имя" />
+				<input class="form__input _req _phone" id="formPopupCallTel" name="formPopupTel" type="tel" placeholder="Телефон" />
+				<!-- <textarea class="form__textarea" id="formPopupTextMassage" name="formPopupText" type="text" placeholder="Хотите записаться? Или есть вопрос?"></textarea> -->
+				<button type="submit" class="form__button _button _button--bright">Отправить</button>
+				<a class="form__link _underline _popup-link" href="#visit">Запланировать визит</a>
+				<input class="form__checkbox _req" id="formPopupCallCheckbox" type="checkbox" checked />
+				<label class="form__agreement _label" for="formPopupCallCheckbox"><span class="custom__checkbox custom__checkbox--tick"></span> <span class="form__agreement-text">Я согласен на обработку своих персональных данных</span></label>
+			</form>
+			<span class="popup__close _cross"></span>
+		</div>
+	</div>
+</article>
+
+<article class="popup popup-visit">
+	<div class="popup__container _container">
+		<div class="popup__body">
+			<h3 class="popup__title">Когда планируете визит?</h3>
+			<form id="formPopupVisit" class="form" action="#">
+				<input class="form__input _req _email" id="formPopupVisitDate" name="formPopupDate" type="datetime-local" placeholder="Почта" />
+				<input class="form__input _req" id="formPopupVisitName" name="formPopupName" type="text" placeholder="Имя" />
+				<input class="form__input _req _email" id="formPopupVisitEmail" name="formPopupEmail" type="email" placeholder="Почта" />
+				<!-- <textarea class="form__textarea" id="formPopupTextMassage" name="formPopupTextMassage" type="text" placeholder="Хотите записаться? Или есть вопрос?"></textarea> -->
+				<input class="form__input _req _phone" id="formPopupVisitTel" name="formPopupTel" type="tel" placeholder="Телефон" />
+				<p class="popup__description">(Заполните если хотите подтвердить визит по телефону)</p>
+				<button class="form__button _button _button--bright" type="submit">Отправить</button>
+				<a class="form__link _underline _popup-link" href="#call">Получить консультацию</a>
+				<input class="form__checkbox _req" id="formPopupVisitCheckbox" type="checkbox" checked />
+				<label class="form__agreement _label" for="formPopupVisitCheckbox"><span class="custom__checkbox custom__checkbox--tick"></span> <span class="form__agreement-text">Я согласен на обработку своих персональных данных</span></label>
+			</form>
+			<span class="popup__close _cross"></span>
+		</div>
+	</div>
+</article>
+
+<article class="_loading"></article>
