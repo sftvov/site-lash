@@ -1,0 +1,38 @@
+.brands {
+	width: 100%;
+	&__container {
+	}
+
+	&__title {
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, 100px);
+		@include common-value('gap', 40);
+		align-items: center;
+		justify-content: space-between;
+		justify-items: center;
+		@media (max-width: $md4+px) {
+			justify-content: space-around;
+		}
+	}
+
+	&__brand {
+	}
+}
+.brand {
+	&__name {
+		display: none;
+	}
+	&__link {
+		display: flex;
+		& img {
+			width: 100%;
+			max-width: 100px;
+			height: 100%;
+			max-height: 80px;
+			object-fit: contain;
+		}
+	}
+}

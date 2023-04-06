@@ -1,0 +1,11 @@
+include html/_mixins.pug
+doctype html
+html(lang="ru")
+	+head('Грузоперевозки в любую точку мира', 'Доставим так далеко как захотите вы','brands')
+	body
+		.wrapper
+			include html/_header.pug
+			main#page.page._padding-header
+				include html/brands/_brands.pug
+			include html/_footer.pug
+		+js('brands')

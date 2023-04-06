@@ -1,0 +1,11 @@
+include html/_mixins.pug
+doctype html
+html(lang="ru")
+	+head('Карточка товара', 'Лучшая карточка товара – описание','card')
+	body
+		.wrapper
+			include html/_header.pug
+			main#page.page._padding-header
+				include html/card/_card.pug
+			include html/_footer.pug
+		+js('card')

@@ -20,7 +20,8 @@ body._lock {
 
 ._section {
 	width: 100%;
-	@include common-value('margin-bottom', 60);
+	@include common-value('margin-top', 30);
+	@include common-value('margin-bottom', 30);
 }
 
 ._padding-for-header {

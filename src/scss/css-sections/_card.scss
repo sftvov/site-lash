@@ -1,0 +1,51 @@
+.card {
+	&__container {
+	}
+
+	&__title {
+	}
+
+	&__body {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		@include common-value('gap', 15);
+	}
+
+	&__image {
+		position: relative;
+		flex-basis: 50%;
+		padding-bottom: 50%;
+		& img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__right {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 0 auto;
+	}
+
+	&__prices {
+	}
+
+	&__price {
+		text-align: center;
+		display: block;
+		margin-bottom: 0.6em;
+		&:has(+ .card__price--sale) {
+			text-decoration: line-through;
+		}
+		&--sale {
+			font-weight: 900;
+		}
+	}
+
+	&__button {
+	}
+}

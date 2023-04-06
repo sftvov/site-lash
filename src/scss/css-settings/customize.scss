@@ -47,16 +47,15 @@ b {
 
 ._button {
 	transition: all 0.15s ease;
-	font-size: 22/20 + em;
 	cursor: pointer;
 	// display: flex;
 	// align-items: center;
 	// column-gap: 4px;
-	@include common-value('padding-top', 12);
-	@include common-value('padding-bottom', 12);
-	@include common-value('padding-left', 24);
-	@include common-value('padding-right', 24);
-	border-radius: 10px;
+	@include common-value('padding-top', 8);
+	@include common-value('padding-bottom', 8);
+	@include common-value('padding-left', 16);
+	@include common-value('padding-right', 16);
+	border-radius: 7px;
 	color: #ffffff;
 	background-color: $TextDark;
 	&:hover {

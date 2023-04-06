@@ -261,7 +261,7 @@ let build = gulp.series(
 	clean,
 	gulp.parallel(
 		copyImages,
-		resize,
+		// resize,
 		// lightImages,
 		videos,
 		fonts,

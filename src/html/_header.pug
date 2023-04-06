@@ -1,15 +1,15 @@
 header.header
 	div.header__container._container
 		a.header__logo-link._goto-block(href='#page')
-			+simpleImg('/img/logo', 'jpg', 'logo', 'кликните чтобы перейти на самый верх страницы')
+			+justImg('/img/logo', 'jpg', 'logo', 'кликните чтобы перейти на самый верх страницы')
 		nav.header__menu.menu
 			ul.menu__list
 				li.menu__item
-					a.menu__link._goto-block(href='#services') Услуги
+					a.menu__link._goto-block(href='/') Каталог
+				li.menu__item
+					a.menu__link._goto-block(href='/brands.html') Бренды
 				li.menu__item
 					a.menu__link._goto-block(href='#company') О компании
-				li.menu__item
-					a.menu__link._goto-block(href='#clients') Клиенты
 				li.menu__item
 					a.menu__link._goto-block(href='#contacts') Контакты
 		a.header__phone._icon-phone(href='tel:89999999999')
