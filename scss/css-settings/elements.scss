@@ -1,0 +1,304 @@
+@use 'sass:math';
+.popup {
+	transition: all 0.5s ease;
+	overflow-y: scroll;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 10;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	&._active {
+		opacity: 1;
+		visibility: visible;
+		& .popup__body {
+			transform: perspective(600px) rotateX(0) translateY(0);
+		}
+	}
+
+	&__container {
+		min-height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__body {
+		transition: transform 0.5s ease;
+		position: relative;
+		transform: perspective(600px) rotateX(90deg) translateY(-50%);
+		max-width: 600px;
+		width: 100%;
+		background-color: #ffffff;
+		@include common-value('padding', 50);
+		@include common-value('border-radius', 20);
+	}
+
+	&__title {
+		$fs: 30;
+		font-size: math.div($fs, $fz) + em;
+		font-weight: 600;
+		@include common-value('margin-bottom', 20);
+	}
+
+	&__description {
+		$fs: 18;
+		font-size: math.div($fs, $fz) + em;
+		max-width: 450px;
+		@include common-value('margin-bottom', 10);
+	}
+
+	&__close {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		@media (max-width: $md3+px) {
+			top: 0;
+			right: 0;
+		}
+		&::before,
+		&::after {
+			background-color: var(--bright);
+		}
+	}
+}
+
+.form {
+	position: relative;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	max-height: 100%;
+	&__input,
+	&__textarea {
+		$fs: 18;
+		font-size: math.div($fs, $fz) + em;
+		&::placeholder {
+			transition: all 0.3s ease;
+		}
+		&:focus::placeholder {
+			transform: translateY(-100%);
+			opacity: 0;
+		}
+	}
+	&__input {
+		flex-basis: 100%;
+		@include common-value('margin-bottom', 10);
+		@include common-value('padding', 10);
+		@include common-value('padding-left', 1);
+		border-bottom: 1px solid var(--TextDark);
+		&._error {
+			border-bottom-color: var(--bright);
+		}
+	}
+
+	&__textarea {
+		resize: vertical;
+		min-width: 100%;
+		min-height: 120px;
+		padding: 9px 5px;
+	}
+
+	&__button {
+		@include common-value('margin-top', 10);
+		@include common-value('margin-bottom', 10);
+		width: 238px;
+		@media (max-width: $md3+px) {
+			width: 100%;
+		}
+	}
+
+	&__link {
+		color: var(--TextLight);
+		margin: 0 auto;
+		text-shadow: 0 0 0.5px var(--TextLight);
+		&:hover {
+			color: var(--bright);
+			&::before {
+				width: 0;
+				background-color: var(--bright);
+			}
+		}
+		&::before {
+			background-color: var(--TextLight);
+			box-shadow: 0 0 0.5px 0 var(--TextLight);
+		}
+	}
+
+	&__checkbox {
+		display: none;
+	}
+
+	&__agreement {
+		cursor: pointer;
+		font-family: 'Roboto';
+		$fs: 14;
+		font-size: math.div($fs, $fz) + em;
+		font-style: normal;
+		font-weight: 400;
+		text-align: left;
+		display: flex;
+		@include common-value('margin-top', 20);
+	}
+	&__agreement-text {
+		position: relative;
+		@include common-value('top', 5);
+	}
+}
+
+.custom__checkbox {
+	position: relative;
+	margin-right: 10px;
+	&--tick {
+		min-width: 24px;
+		height: 24px;
+		border: 1px solid var(--TextDark);
+		&::before {
+			top: 12px;
+			left: 3px;
+			width: 8px;
+			transform: rotate(45deg);
+		}
+		&::after {
+			top: 10px;
+			left: 7px;
+			width: 14px;
+			transform: rotate(-45deg);
+		}
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			height: 2px;
+			background-color: var(--main);
+			opacity: 0;
+			visibility: hidden;
+			transition-property: opacity visability;
+			transition-duration: 0.5s;
+			transition-timing-function: ease;
+		}
+	}
+}
+
+input._error + ._label .custom__checkbox {
+	border-color: var(--bright);
+}
+
+input:checked + ._label .custom__checkbox {
+	&::before,
+	&::after {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.quantity {
+	display: inline-flex;
+	align-items: center;
+	color: #000000;
+	width: 88px;
+	height: 40px;
+	border: 1px solid var(--TextDark);
+	border-radius: 8px;
+	&__button {
+		cursor: pointer;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex: 0 0 24px;
+		height: 24px;
+		border-radius: 4px;
+		border: 1px solid var(--main);
+		&_plus {
+			margin-right: 6px;
+			&::before {
+				transform: rotate(-90deg);
+			}
+		}
+		&_minus {
+			margin-left: 6px;
+		}
+		&:hover {
+			background-color: #ffffff;
+		}
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			transition: all 0.3s ease 0s;
+			width: 9px;
+			height: 1px;
+			background-color: var(--TextDark);
+		}
+	}
+	&__input {
+		input {
+			$fs: 14;
+			font-size: math.div($fs, $fz) + em;
+			text-align: center;
+			color: var(--TextDark);
+			width: 100%;
+			height: 100%;
+			border-radius: 8px;
+		}
+	}
+}
+
+._cross {
+	cursor: pointer;
+	padding: 20px;
+	&::after,
+	&::before {
+		position: absolute;
+		top: 19px;
+		right: 10px;
+		content: '';
+		width: 20px;
+		height: 2px;
+	}
+	&::after {
+		transform: rotate(45deg);
+	}
+	&::before {
+		transform: rotate(-45deg);
+	}
+}
+
+// ._spoller-arrow {
+// 	position: relative;
+// 	padding-left: 20px;
+// 	&::after,
+// 	&::before {
+// 		content: '';
+// 		position: absolute;
+// 		width: 10px;
+// 		height: 2px;
+// 		background-color: var(--golden);
+// 		border-radius: 25%;
+// 		transition: all 0.5s ease;
+// 	}
+// 	&::after {
+// 		top: calc(50% + 1px);
+// 		transform: rotate(50deg);
+// 		right: -4px;
+// 	}
+// 	&::before {
+// 		top: calc(50% + 1px);
+// 		transform: rotate(130deg);
+// 	}
+// 	&._active {
+// 		&::after {
+// 			transform: rotate(130deg);
+// 		}
+
+// 		&::before {
+// 			transform: rotate(40deg);
+// 			bottom: calc(50% + 2px);
+// 			right: 12px;
+// 		}
+// 	}
+// }

@@ -1,0 +1,53 @@
+@use 'sass:math';
+body._lock {
+	overflow: hidden;
+}
+
+._container {
+	margin: 0 auto;
+	width: 100%;
+
+	/* Container variant 1*/
+	max-width: $maxContainer + px;
+	@media (max-width: $md1+px) {
+		max-width: $desctopContainer + px;
+	}
+	@media (max-width: $md2+px) {
+		max-width: $laptopContainer + px;
+	}
+
+	@media (max-width: $md3+px) {
+		max-width: $padContainer + px;
+	}
+	@media (max-width: $md4+px) {
+		max-width: 100%;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	/* Container variant 2 */
+	// @include adaptiv-value-under('padding-left', 90, 10, $md1, $md4);
+	// @include adaptiv-value-under('padding-right', 90, 10, $md1, $md4);
+}
+
+._section {
+	width: 100%;
+	@include common-value('margin-bottom', 50);
+}
+
+._loading {
+	content: '';
+	z-index: 100;
+	opacity: 0;
+	visibility: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: var(--darkMask) url('../img/icons/loading.gif') center / 50px no-repeat;
+}
+
+._tabs-block:not(._active) {
+	display: none;
+}

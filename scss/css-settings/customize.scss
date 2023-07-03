@@ -1,0 +1,106 @@
+@use 'sass:math';
+
+body {
+	color: var(--TextColor);
+	@include common-value('font-size', $fz);
+	font-weight: 500;
+	line-height: 1.2;
+	letter-spacing: 0em;
+	font-style: normal;
+}
+
+// b {
+// 	font-weight: 700;
+// }
+
+._title {
+	$fs: 36;
+	font-size: math.div($fs, $fz) + em;
+	$lh: 45;
+	line-height: math.div($lh, $fs);
+	font-weight: 600;
+	// text-align: center;
+	text-transform: uppercase;
+	color: var(--TextDark);
+	position: relative;
+	@include common-value('margin-top', 15);
+	@include common-value('margin-bottom', 30);
+	&::before {
+		content: '';
+		position: absolute;
+		@include common-value('top', 21);
+		right: calc(100% + 15px);
+		width: 100px;
+		height: 3px;
+		background-color: var(--bright);
+	}
+}
+
+._button {
+	transition: all 0.15s ease;
+	cursor: pointer;
+	// display: flex;
+	// align-items: center;
+	// column-gap: 4px;
+	@include common-value('padding-top', 8);
+	@include common-value('padding-bottom', 8);
+	@include common-value('padding-left', 16);
+	@include common-value('padding-right', 16);
+	border-radius: 7px;
+	color: #ffffff;
+	background-color: var(--TextDark);
+	&:hover:not(:disabled) {
+		box-shadow: -2px 2px 0 #000000;
+		transform: translateX(1px) translateY(-1px);
+	}
+	&:active {
+		box-shadow: 0 0 0 #000000;
+		transform: translateX(0) translateY(0);
+	}
+	&--bright {
+		color: #ffffff;
+		background-color: var(--main);
+		&:hover {
+			color: #ffffff;
+			background-color: var(--bright);
+		}
+	}
+	// &--white {
+	// 	color: var(--colorTextDark);
+	// 	background-color: #ffffff;
+	// 	border: 1px solid var(--borderGray);
+	// 	box-shadow: 0 0 2px var(--TextDark);
+	// 	&::before {
+	// 		color: var(--colorTextGray);
+	// 	}
+	// }
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.5;
+	}
+}
+
+// ._underline {
+// 	position: relative;
+// 	&::before {
+// 		content: '';
+// 		pointer-events: none;
+// 		position: absolute;
+// 		bottom: -2px;
+// 		width: calc(100% + 4px);
+// 		height: 1px;
+// 		background-color: var(--TextDark);
+// 		transition: all 0.3s ease-out;
+// 	}
+// }
+
+// ._background {
+// 	position: absolute;
+// 	top: calc(-100vw / 1904 * 276);
+// 	right: -38.55%;
+// 	max-width: 1444px;
+// 	width: calc(100vw / 1904 * 1444);
+// 	@media (min-width: $maxWidth+px) {
+// 		top: -276px;
+// 	}
+// }

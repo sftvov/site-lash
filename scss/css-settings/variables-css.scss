@@ -1,0 +1,22 @@
+:root {
+	--md1: #{$md1};
+	--md2: #{$md2};
+	--md3: #{$md3};
+	--md4: #{$md4};
+
+	--TextDark: #333333;
+	--TextGray: #4f4f4f;
+	--TextLight: #828282;
+
+	--TextColor: var(--TextDark);
+
+	--lightShadow: #ebebeb;
+
+	--lightMask: #00000050;
+	--darkMask: #000000bb;
+
+	--main: #0e4bb5;
+	--bright: #8d39b5;
+	--lightBright: #b977d7;
+	--golden: #ffd947;
+}

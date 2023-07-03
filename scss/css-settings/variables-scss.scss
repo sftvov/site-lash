@@ -1,0 +1,54 @@
+$fontFamily: 'Gilroy';
+$fz: 20;
+
+$minWidth: 280;
+$maxWidth: 2560;
+
+$mdSpace: 79.95;
+
+/* Container variant 1 */
+
+$md1: 1919.95;
+$md2: 1535.95;
+$md3: 1365.95;
+$md4: 1023.95;
+
+$maxContainer: $md1 - $mdSpace;
+$desctopContainer: $md2 - $mdSpace;
+$laptopContainer: $md3 - $mdSpace;
+$padContainer: $md4 - $mdSpace;
+
+/* --- */
+
+$minContainer: $minWidth - 20;
+
+/* Container variant 2 */
+
+// $padContainer: 900;
+// $laptopContainer: 1200;
+// $desctopContainer: 1500;
+// $maxContainer: 1800;
+
+// $md1: $maxContainer + $mdSpace;
+// $md2: $desctopContainer + $mdSpace;
+// $md3: $laptopContainer + $mdSpace;
+// $md4: $padContainer + $mdSpace;
+
+/* --- */
+
+$swiper-theme-color: var(--main);
+$swiper-inactive-color: var(--darkMask);
+$swiper-preloader-color: $swiper-theme-color;
+$swiper-navigation-color: $swiper-theme-color;
+$swiper-navigation-inactive-color: $swiper-inactive-color;
+$swiper-navigation-size: 50px;
+$swiper-pagination-color: $swiper-theme-color;
+$swiper-pagination-bullet-inactive-color: $swiper-inactive-color;
+$swiper-pagination-bullet-size: 10px;
+$swiper-pagination-bullet-bottom: 5px;
+$swiper-pagination-bullet-width: $swiper-pagination-bullet-size;
+$swiper-pagination-bullet-height: $swiper-pagination-bullet-size;
+$swiper-pagination-bullet-inactive-opacity: 1;
+$swiper-pagination-bullet-opacity: 1;
+$swiper-pagination-bullet-horizontal-gap: 5px;
+$swiper-pagination-bullet-vertical-gap: 6px;
