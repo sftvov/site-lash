@@ -10,7 +10,7 @@ const lightArr = [
 ];
 
 const resizeArr = [
-	// ['/hero/', false, true, [2000, 0], [400, 0]],
+	['/products/', false, true, [800, 0], [400, 0], [300, 0], [200, 0]],
 	// ['/site-types/', false, true, [200, 0]],
 ];
 

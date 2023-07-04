@@ -1,58 +1,6 @@
--
-	let date = new Date();
-	version = date.getTime();
-
-mixin head(title, description, page, ...arr)
-	head
-		meta(name="robots", content="noindex") 
-		link(rel="stylesheet", href=`css/style.min.css?_v=${version}`)
-		link(rel="stylesheet", href=`css/${page}.min.css?_v=${version}`)
-		each link in arr
-			link(rel="stylesheet", href=`css/section/${link}.min.css?_v=${version}`)
-		meta(charset="utf-8")
-		meta(name="viewport" content="width=device-width, initial-scale=1.0")
-		title= title
-		meta(name="description", content=description)
-		meta(name="theme-color" content="#17689f")
-		link(rel="canonical" href="http://tag-mesa.com/")
-
-mixin js(page, ...arr)
-	script(src=`js/script.min.js?_v=${version}`)
-	script(src=`js/${page}.min.js?_v=${version}`)
-	each value in arr
-		script(src=`js/section/${value}.min.js?_v=${version}`)
-
-mixin justImg(path, ext, alt, title)
-	img(src= path + '.' + ext, width='auto', height='auto', alt=alt, title=title , loading='lazy')
-
-mixin simpleImg(path, ext, alt, title)
-	picture
-		source(srcset=path + '-light.webp', type="image/webp")
-		source(srcset=path + '-light.' + ext, type=`image/${ext}`)
-		img(src= path + '.' + ext, width='auto', height='auto', alt=alt, title=title , loading='lazy')
-
-mixin img(path, ext, alt, title, ...arr)
-	-
-		let srcsetWebp = '';
-		let srcsetJpeg = '';
-		for(let i = 0; i < arr.length; i++) {
-			let value = arr[i];
-			let srcsetWebpPart = `${path}-${value}.webp ${value}w`;
-			let srcsetJpegPart = `${path}-${value}.jpeg ${value}w`;
-			srcsetWebp+= srcsetWebpPart;
-			srcsetJpeg+= srcsetJpegPart;
-			if(arr.length - i > 1) {
-				srcsetWebp+= ','
-				srcsetJpeg+= ','
-			}
-		}
-	picture
-		source(srcset=srcsetWebp, type="image/webp")
-		source(srcset=srcsetJpeg, type="image/jpeg")
-		img(src= path + '.' + ext, width='auto', height='auto', alt=alt, title=title, loading='lazy')
-
+include ../../../src/_mixins.pug
 mixin imgLash(path, ext, alt, title)
-	+img(path, ext, alt, title, 200, 300, 400, 800)
+	+img(path, ext, alt, title, 800, 400, 300, 200)
 
 mixin imgServ(path, ext, alt, title)
 	+img(path, ext, alt, title, 800, 600, 400, 200)
